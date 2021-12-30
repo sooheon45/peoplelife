@@ -1,10 +1,12 @@
 # Jenkins 설치 및 운영
 
 ## java 11 설치
+```
 sudo apt update -y
 sudo apt install openjdk-11-jdk
-~/.bashrc
+vi ~/.bashrc
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+```
 
 ## jenkins 설치
 - 저장소 키 다운로드
@@ -12,6 +14,8 @@ export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys FCEF32E745F2C3D5 && sudo apt-get update
 echo deb http://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list
+sudo apt update -y
+sudo apt install jenkins
 sudo systemctl status jenkins
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
